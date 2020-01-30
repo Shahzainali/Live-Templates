@@ -1,0 +1,17 @@
+<templateSet group="Kotlin">
+  <template name="adapter" value="class $CLASSNAME$(val context: Context) :&#10;    RecyclerView.Adapter&lt;$CLASSNAME$.$CLASSNAME$$VIEWHOLDER$&gt;() {&#10;    override fun onCreateViewHolder(&#10;        parent: ViewGroup,&#10;        viewType: Int&#10;    ): $CLASSNAME$$VIEWHOLDER$ {&#10;        return $CLASSNAME$$VIEWHOLDER$(&#10;            LayoutInflater.from(context).inflate(&#10;                R.layout.$row$,&#10;                parent,&#10;                false&#10;            )&#10;        )&#10;    }&#10;&#10;    override fun getItemCount(): Int {&#10;        return 10&#10;    }&#10;&#10;    override fun onBindViewHolder(holder: $CLASSNAME$$VIEWHOLDER$, position: Int) {&#10;       &#10;    }&#10;&#10;    class $CLASSNAME$$VIEWHOLDER$(itemView: View) : RecyclerView.ViewHolder(itemView)&#10;}" description="Creates a new adapter class" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="VIEWHOLDER" expression="" defaultValue="&quot;ViewHolder&quot;" alwaysStopAt="false" />
+    <variable name="row" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="Toast" value="Toast.makeText($CONTEXT$, &quot;$VALUE$&quot;, Toast.LENGTH_LONG).show()" description="Create a new Toast" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTEXT" expression="kotlinClassName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+</templateSet>
